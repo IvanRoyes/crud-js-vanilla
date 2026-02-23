@@ -24,7 +24,12 @@ body{
     button{
         cursor: pointer;
     }
-    button:active{
+    button[disabled]
+    {
+        opacity: 0.5;
+    }
+    button[enabled]
+    {
         opacity: 0.8;
     }
     .solid{

@@ -11,23 +11,50 @@
     <form>
         <div>
             <div><label>Email</label></div>
-            <input type="email" name="email" placeholder="su@gmail.com"/>
+            <input type="email" name="email" id="email" onchange="validateFields()" placeholder="su@gmail.com"/>
         </div>
         <div>
             <div><label>Contraseña</label></div>
-            <input type="password" name="password" placeholder="Contraseña">
+            <input type="password" name="password" id="password" onchange="validateFields()" placeholder="Contraseña">
         </div>
         <div>
-            <button type="button" class="clear">Recuperar Contraseña</button>
+            <button type="button" class="clear" id="recover-password-button" disabled="true">Recuperar Contraseña</button>
         </div>
         <div>
-            <button type="button" class="solid">Ingresar</button>
+            <button type="button" class="solid" id="login-button" disabled="true">Ingresar</button>
         </div>
         <div>
             <button type="button" class="outline">Registrarse</button>
         </div>
     </form>
 </body>
+
+<script>
+    function validateFields(){
+    const emailValid = isEmailValid();
+    document.getElementById('recover-password-button').disabled = !emailValid;
+
+    const passwordValid = isPasswordValid();
+    document.getElementById('login-button').disabled = !emailValid || !passwordValid;
+}
+
+function isEmailValid(){
+    const email = document.getElementById("email").value;
+    if (!email) return false;
+    return validateEmail(email);
+}
+
+function isPasswordValid(){
+    const password = document.getElementById('password').value;
+    if (!password) return false;
+    return true;
+}
+
+function validateEmail(email){
+    return /\S+@\S+\.\S+/.test(email);
+}
+
+</script>
 
 
 </html>
