@@ -26,15 +26,36 @@
             <button type="button" class="clear" id="recover-password-button" disabled="true">Recuperar Contraseña</button>
         </div>
         <div>
-            <button type="button" class="solid" id="login-button" disabled="true">Ingresar</button>
+            <button type="button" class="solid" id="login-button" disabled="true" onclick="login()">Ingresar</button>
         </div>
         <div>
-            <button type="button" class="outline">Registrarse</button>
+            <button type="button" class="outline" onclick="register()">Registrarse</button>
         </div>
     </form>
     
 </body>
 
+<script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.9.0/firebase-auth-compat.js"></script>
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyDGYKY_ZhRQ3Vk_7EIuGYO17fC4hgbLJ1U",
+        authDomain: "control-de-gastos-824ee.firebaseapp.com",
+        projectId: "control-de-gastos-824ee",
+        storageBucket: "control-de-gastos-824ee.firebasestorage.app",
+        messagingSenderId: "563600833903",
+        appId: "1:563600833903:web:4b5d0248c2a8391cbf3c9a"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    console.log('antes');
+    firebase.auth().signInWithEmailAndPassword("royesivan@gmail.com","123456").then(response =>{
+        console.log('success', response)
+    }).catch(error => {
+        console.log('error', error)
+    });
+    console.log('despues')
+</script>
 <script src="index.js"></script>
 <script src="validations.js"></script>
 
