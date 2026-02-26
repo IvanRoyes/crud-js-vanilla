@@ -8,7 +8,7 @@
     <title>Login - Control de Gastos</title>
 </head>
 
-<body>
+<body class="centralize">
     <form>
         <div class="form-field">
             <div><label>Email</label></div>
@@ -47,16 +47,9 @@
         appId: "1:563600833903:web:4b5d0248c2a8391cbf3c9a"
     };
     firebase.initializeApp(firebaseConfig);
-
-    console.log('antes');
-    firebase.auth().signInWithEmailAndPassword("royesivan@gmail.com","123456").then(response =>{
-        console.log('success', response)
-    }).catch(error => {
-        console.log('error', error)
-    });
-    console.log('despues')
 </script>
 <script src="index.js"></script>
 <script src="validations.js"></script>
+<script src="loading.js"></script>
 
 </html>

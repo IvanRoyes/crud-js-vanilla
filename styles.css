@@ -1,8 +1,5 @@
 body{
     background: green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
 }
 form{
@@ -22,12 +19,4 @@ input{
 button{
     cursor: pointer;
     margin-bottom: 10px;
-}
-button[disabled]
-{
-    opacity: 0.5;
-}
-button[enabled]
-{
-    opacity: 0.8;
 }
